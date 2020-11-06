@@ -12,9 +12,7 @@ def prob_022():
     sorted_names = sorted(namefile.names)
     total, counter = 0, 1
     for name in sorted_names:
-        name_value = 0
-        for letter in name:
-            name_value += (ord(letter)-64)
+        name_value = sum((ord(letter) - 64) for letter in name)
         total += name_value * counter
         counter += 1
     return total

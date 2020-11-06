@@ -12,28 +12,20 @@ def prob_023(n = 28124):
     be written as the sum of two abundant number
     https://en.wikipedia.org/wiki/Abundant_number
     '''
-    abundant_list, int_list, non_sum = [], [], []
+    abundant_list, non_sum = [], []
+    int_list_sum = sum(range(1,n))
+
     double_abundants = set()
     for i in range(1,n):
-        i_divisor_sum = 0
-        for j in range(1,int(i/2)+1):
-            if i % j == 0:
-                i_divisor_sum += j
+        i_divisor_sum = sum(j for j in range(1, int(i/2) + 1) if i % j == 0)
         if i_divisor_sum > i:
             abundant_list.append(i)
     
-    for value in abundant_list:
-        for other_value in abundant_list:
-            if other_value + value < n:
-                double_abundants.add(value + other_value)
+    for x in abundant_list:
+        for y in abundant_list:
+            if y + x < n:
+                double_abundants.add(x + y)
                 
-    for i in range(1, n):
-        int_list.append(i)
-    for i in int_list:
-        if i not in double_abundants:
-            non_sum.append(i)
-    double_list = [i for i in double_abundants]
-
-    return sum(int_list) - sum(double_list)
+    return int_list_sum - sum(double_abundants)
 
 prob_023()
