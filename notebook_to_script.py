@@ -3,7 +3,7 @@ import re
 import datetime
 
 
-f = open('euler__master.ipynb').read()
+f = open('../euler__master.ipynb').read()
 
 name = 'Chris B.'
 date = datetime.date.today().strftime("%B %d, %Y")
@@ -15,7 +15,7 @@ for cell in json.loads(f)['cells']:
         f_name = re.match(r'def (prob_\d\d\d)', ''.join(cell['source']))[1]
         f_prob = re.match(r'def prob_(\d\d\d)', ''.join(cell['source']))[1]
         
-        with open(f'test/{f_name}.py', 'w') as file:
+        with open(f'../problems/{f_name}.py', 'w') as file:
             title = 'Project Euler Problem ' + f_prob
             subtitle = 'https://projecteuler.net/problem=' + f_prob
             
