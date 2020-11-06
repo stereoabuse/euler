@@ -12,10 +12,8 @@ def prob_034(n=100000):
     sum_of_sums = 0
     i_list = []
     for i in range(3,n+1):
-        fact_sum = 0
         i_str = str(i)
-        for character in i_str:
-            fact_sum += factorial(int(character))
+        fact_sum = sum(factorial(int(character)) for character in i_str)
         if fact_sum == i:
             sum_of_sums += i
             i_list.append(fact_sum)

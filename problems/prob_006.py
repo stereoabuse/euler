@@ -12,9 +12,7 @@ def prob_006(n=100):
     sums = 0
     for i in range(n+1):
         sum_of_squares += i**2
-        
-    for j in range(n+1):
-        sums += j
+        sums += i
     square_of_sums = sums ** 2
     return abs(sum_of_squares- square_of_sums)
 

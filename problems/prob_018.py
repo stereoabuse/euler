@@ -9,8 +9,7 @@
 def prob_018():
     "Return max total top to bottom of triangle"
     nums = open('utility/euler_18_numbers.txt').readlines()
-    tri = [[int(i) for i in r.split()] for r in nums]
-    tri = tri[::-1]
+    tri = [[int(i) for i in r.split()] for r in nums][::-1]
     b = tri
     for i in range(len(tri[:-1])):
         n = [max(tri[i][m], tri[i][m+ 1]) for m, j in enumerate(tri[i][:-1])]
