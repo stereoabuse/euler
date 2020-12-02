@@ -7,7 +7,7 @@
 ################################################################################
 
 def prob_047():
-    primes = set(euler_funcs.seive(350))
+    primes = set(euler_funcs.sieve(350))
     biglist = set()
     for i in primes:
         for j in primes:
