@@ -3,17 +3,17 @@
 #                     https://projecteuler.net/problem=004                     #
 #                                                                              #
 # Author:   Chris B.                                                           #
-# Date:     November 05, 2020                                                  #
+# Date:     February 26, 2020                                                  #
 ################################################################################
 
-def prob_004(digits=3):
+def prob_004(limit=1000):
     "Returns largest palindrome made from product of two 3-digit numbers"
-    n = 10 ** digits
-    biglist = []
-    for i in range(n):
-        for j in range(i,n):
-            if str(i*j) == "".join(reversed(str(i*j))):
-                biglist.append(i*j)
-    return sorted(biglist)[-1]
+    largest = 0
+    for i in range(limit):
+        for j in range(i, limit):
+            if str(i * j) == str(i * j)[::-1] and i * j > largest:
+                largest = i * j
+    return largest
 
 prob_004()
+
