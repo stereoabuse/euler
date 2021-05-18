@@ -37,7 +37,7 @@ def prob_054():
         exists = c.most_common()[0][1] == 3
         return [exists, rank(c) if exists else -1]
 
-    def straight(hand):  # this is an old one that I can't figure out
+    def straight(hand):
         exists = sorted([card[0] for card in hand]) in straights
         return [exists, max(values(hand)) if exists else -1]
 
@@ -91,4 +91,4 @@ def prob_054():
     
     return sum((p1_wins(p1[i], p2[i]) for i in range(len(hands))))
 
-prob_054()
+print(prob_054())
