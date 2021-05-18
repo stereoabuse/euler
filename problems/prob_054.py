@@ -3,7 +3,7 @@
 #                     https://projecteuler.net/problem=054                     #
 #                                                                              #
 # Author:   Chris B.                                                           #
-# Date:     November 05, 2020                                                  #
+# Date:     May 18, 2020                                                       #
 ################################################################################
 
 def prob_054():
