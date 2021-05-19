@@ -9,7 +9,8 @@
 def prob_054():
     
     # Poker card utility information
-    hands = open('utility/p054_poker.txt').read().splitlines()
+    with open('utility/p054_poker.txt') as file:
+        hands = file.read().splitlines()
     cards = ('2', '3', '4', '5', '6', '7', '8', '9', 'T', 'J', 'Q', 'K', 'A')
     straights = [sorted(cards[c:c+5]) for c in range(0, len(cards)-4)]
 
